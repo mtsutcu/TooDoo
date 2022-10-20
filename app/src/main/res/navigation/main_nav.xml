@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.talip.toodoo.ui.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/toDetail"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/toSave"
+            app:destination="@id/saveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.talip.toodoo.ui.fragment.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="todo"
+            app:argType="com.talip.toodoo.data.entity.Todo" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveFragment"
+        android:name="com.talip.toodoo.ui.fragment.SaveFragment"
+        android:label="fragment_save"
+        tools:layout="@layout/fragment_save" />
+</navigation>
